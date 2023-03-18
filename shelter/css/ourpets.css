@@ -1,0 +1,80 @@
+@import url(style.css);
+@import url(header.css);
+@import url(footer.css);
+
+.menu_item,
+.logo-title {
+  color: #545454;
+}
+.menu_item:hover,
+.menu_active,
+.logo-subtitle {
+  color: #292929;
+}
+
+.our-friends {
+  padding: 80px 0 100px 0;
+  background: #f6f6f6;
+}
+
+.our-friends_title {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+.our-friends_items {
+  padding: 45px 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  column-gap: 40px;
+  row-gap: 30px;
+}
+
+.our-friends_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 9px;
+  background: #fafafa;
+}
+
+.our-friends_item:hover {
+  background: #fff;
+}
+
+.our-friends_item:hover .pet-info_btn {
+  background: #fddcc4;
+}
+
+.pets-card-title {
+  margin-top: 30px;
+  font-family: 'Georgia';
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.06em;
+  color: #545454;
+}
+
+.pet-info_btn {
+  margin: 30px 0;
+  width: 187px;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 20px;
+}
+
+.pag_btn {
+  width: 52px;
+  height: 52px;
+  border: 2px solid #cdcdcd;
+  border-radius: 50%;
+  cursor: pointer;
+}
