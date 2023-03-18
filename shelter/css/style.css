@@ -5,6 +5,10 @@
   transition: all 0.3s;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Arial;
   font-weight: 400;
@@ -91,6 +95,23 @@ body {
   font-size: 15px;
   line-height: 160%;
   color: #cdcdcd;
+  text-decoration: none;
+}
+
+.menu_item:hover {
+  color: #fafafa;
+}
+.menu_item::after {
+  content: '';
+  display: block;
+  margin: 0 auto;
+  height: 2px;
+  width: 0;
+  background: #f1cdb3;
+  transition: width 0.3s ease-out;
+}
+.menu_item:hover::after {
+  width: 100%;
 }
 
 .not-only {
