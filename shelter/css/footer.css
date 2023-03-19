@@ -38,6 +38,10 @@
   color: #f1cdb3;
 }
 
+.footer_contacts-email {
+  margin-top: 5px;
+}
+
 .footer-descr::before {
   margin-top: 4px;
 }
