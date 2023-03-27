@@ -39,19 +39,10 @@
 .menu_active {
   color: #fafafa;
 }
-.menu_item::after {
+.menu_active::after {
   content: '';
   display: block;
-  margin: 0 auto;
   height: 2px;
-  width: 0;
+  width: 100%;
   background: #f1cdb3;
-  transition: width 0.3s ease-out;
-}
-.menu_item:hover::after {
-  width: 100%;
-}
-
-.menu_active::after {
-  width: 100%;
 }
