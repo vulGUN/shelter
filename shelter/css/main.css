@@ -8,9 +8,9 @@
 
 .not-only {
   display: flex;
-  max-height: 728px;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .not-only_left {
@@ -45,6 +45,7 @@
 
 .about_wrap {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   column-gap: 120px;
@@ -72,6 +73,7 @@
 .our-friends_slider {
   padding: 60px 0;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
 }
@@ -88,12 +90,13 @@
 }
 
 .arrow::before {
-  content: url(../assets/img/Arrow.svg);
+  content: '\279E';
+  transform: rotate(180deg);
   margin-bottom: 3px;
   margin-right: 2px;
 }
 .our-friends_right-arrow.arrow::before {
-  transform: rotate(180deg);
+  transform: rotate(0deg);
   margin-bottom: -3px;
   margin-right: -2px;
 }
@@ -104,8 +107,10 @@
 
 .our-friends_items {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   column-gap: 90px;
+  row-gap: 90px;
 }
 
 .our-friends_item {
@@ -197,6 +202,7 @@
 
 .in-addition_wrap {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   column-gap: 30px;
 }

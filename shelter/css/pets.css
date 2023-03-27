@@ -81,4 +81,30 @@
   border: 2px solid #cdcdcd;
   border-radius: 50%;
   cursor: pointer;
+  background-color: transparent;
+  font-family: 'Georgia';
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+}
+
+.pagination_now {
+  background-color: #f1cdb3;
+}
+
+.active {
+  border-color: #f1cdb3;
+  color: #292929;
+}
+
+.active:hover {
+  border-color: #fddcc4;
+  background-color: #fddcc4;
+}
+
+.inactive {
+  border-color: #cdcdcd;
+  color: #cdcdcd;
+  background-color: transparent;
+  cursor: auto;
 }
