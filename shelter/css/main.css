@@ -240,6 +240,10 @@
   margin-top: 6px;
 }
 
+.in-addition_credit-card:hover {
+  background: #fddcc4;
+}
+
 .in-addition_donation-descr {
   font-style: italic;
   font-weight: 400;
