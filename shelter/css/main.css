@@ -30,7 +30,10 @@
 }
 
 .not-only_btn {
+  display: block;
   margin-top: 40px;
+  text-align: center;
+  line-height: 52px;
   background: #f1cdb3;
   border: none;
 }
@@ -143,6 +146,8 @@
   display: block;
   margin: 0 auto;
   width: 261px;
+  text-align: center;
+  line-height: 52px;
   background: #f1cdb3;
   border: none;
 }
