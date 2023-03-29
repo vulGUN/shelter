@@ -53,10 +53,9 @@
 
 .about_right {
   max-width: 430px;
-}
-
-.about_descr {
-  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
 }
 
 .our-friends {

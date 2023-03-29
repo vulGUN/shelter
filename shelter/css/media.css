@@ -22,6 +22,15 @@
   img.not-only__dog {
     max-width: 569px;
   }
+
+  .about_wrap {
+    flex-direction: column-reverse;
+    row-gap: 80px;
+  }
+
+  .about_img {
+    max-width: 300px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -61,6 +70,23 @@
   }
 
   img.not-only__dog {
+    max-width: 260px;
+  }
+
+  .about {
+    padding: 42px 0;
+  }
+
+  .about_wrap {
+    row-gap: 42px;
+  }
+
+  .about_descr {
+    text-align: justify;
+    padding: 0 15px;
+  }
+
+  .about_img {
     max-width: 260px;
   }
 }
