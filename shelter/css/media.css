@@ -1,0 +1,66 @@
+@media (max-width: 1270px) {
+  .container {
+    padding: 0 30px;
+  }
+
+  .not-only {
+    padding-top: 30px;
+    justify-content: flex-end;
+  }
+
+  .not-only_left {
+    padding: 0 124px;
+    max-width: 100%;
+    margin-bottom: 100px;
+  }
+
+  .not-only_btn {
+    margin: auto;
+    margin-top: 42px;
+  }
+
+  img.not-only__dog {
+    max-width: 569px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  .header {
+    padding: 30px 10px;
+  }
+
+  .burger-menu {
+    display: flex;
+    flex-direction: column;
+    row-gap: 7px;
+    width: 30px;
+  }
+
+  .navigation {
+    display: none;
+  }
+
+  .not-only_left {
+    padding: 0;
+    margin-bottom: 104px;
+  }
+
+  .title {
+    margin: auto;
+    font-size: 25px;
+    text-align: center;
+    letter-spacing: 0.06em;
+  }
+
+  .descr {
+    text-align: center;
+  }
+
+  img.not-only__dog {
+    max-width: 260px;
+  }
+}
