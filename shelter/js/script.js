@@ -41,8 +41,17 @@ console.log(`
 
 const burgerBtn = document.querySelector('.burger-menu'),
   menu = document.querySelector('.navigation');
+// const body = document.body;
+// const html = document.documentElement;
 
 burgerBtn.addEventListener('click', () => {
   menu.classList.toggle('menu_open');
   burgerBtn.classList.toggle('menu_rotate');
+  // if (body.style.overflow === 'hidden') {
+  //   html.style.overflow = 'visible';
+  //   body.style.overflow = 'visible';
+  // } else {
+  //   html.style.overflow = 'hidden';
+  //   body.style.overflow = 'hidden';
+  // }
 });

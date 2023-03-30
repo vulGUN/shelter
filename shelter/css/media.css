@@ -106,6 +106,20 @@
 
   .burger-menu {
     display: flex;
+    position: absolute;
+    right: 20px;
+  }
+
+  .menu_item {
+    color: #cdcdcd;
+  }
+
+  .menu_item:hover,
+  .menu_active {
+    color: #fafafa;
+  }
+  .menu_active::after {
+    background: #f1cdb3;
   }
 
   .navigation {
@@ -119,6 +133,7 @@
     width: 320px;
     background: #292929;
     transition: all 0.3s;
+    z-index: 9998;
   }
 
   .menu {

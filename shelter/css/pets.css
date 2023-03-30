@@ -108,3 +108,16 @@
   background-color: transparent;
   cursor: auto;
 }
+
+.menu_rotate .burger-item {
+  background-color: #fff;
+}
+
+.burger_wrap {
+  position: absolute;
+  right: 0;
+  top: 0;
+  overflow-x: hidden;
+  height: 0;
+  width: 0;
+}
