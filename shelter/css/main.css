@@ -70,11 +70,20 @@
 }
 
 .our-friends_slider {
+  position: relative;
   padding: 60px 0;
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow_wrap {
+  position: absolute;
+  width: 100%;
+  display: flex;
   align-items: center;
   justify-content: space-between;
+  z-index: 0;
 }
 
 .arrow {
@@ -91,25 +100,19 @@
 .arrow::before {
   content: '\279E';
   transform: rotate(180deg);
-  margin-bottom: 3px;
+  margin-bottom: -3px;
   margin-right: 2px;
 }
 .our-friends_right-arrow.arrow::before {
   transform: rotate(0deg);
-  margin-bottom: -3px;
+  margin-bottom: 3px;
   margin-right: -2px;
-}
-
-.arrow:hover {
-  background-color: #f1cdb3;
 }
 
 .our-friends_items {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   column-gap: 90px;
-  row-gap: 90px;
 }
 
 .our-friends_item {
@@ -118,13 +121,7 @@
   align-items: center;
   border-radius: 9px;
   background: #fafafa;
-}
-.our-friends_item:hover {
-  background: #fff;
-}
-
-.our-friends_item:hover .pet-info_btn {
-  background: #fddcc4;
+  z-index: 1;
 }
 
 .pets-card-title {
@@ -238,10 +235,6 @@
 .in-addition_credit-card::before {
   content: url(../assets/img/credit-card.svg);
   margin-top: 6px;
-}
-
-.in-addition_credit-card:hover {
-  background: #fddcc4;
 }
 
 .in-addition_donation-descr {
