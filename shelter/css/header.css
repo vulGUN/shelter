@@ -7,6 +7,10 @@
 
 .burger-menu {
   display: none;
+  z-index: 3;
+  flex-direction: column;
+  row-gap: 8px;
+  width: 30px;
 }
 
 .logo-title {
@@ -57,4 +61,18 @@
   width: 100%;
   height: 2px;
   background-color: #f1cdb3;
+  transition: all 0.3s;
+}
+
+.burger-item .menu_open {
+  transform: rotate(-90deg);
+}
+
+.menu_open {
+  right: 0 !important;
+}
+
+.menu_rotate {
+  transform: rotate(90deg);
+  z-index: 3;
 }

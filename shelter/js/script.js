@@ -36,3 +36,13 @@ console.log(`
 фоновый цвет тянется на всю ширину страницы +2
 
 Итого: 100 баллов`);
+
+// Бургер меню
+
+const burgerBtn = document.querySelector('.burger-menu'),
+  menu = document.querySelector('.navigation');
+
+burgerBtn.addEventListener('click', () => {
+  menu.classList.toggle('menu_open');
+  burgerBtn.classList.toggle('menu_rotate');
+});
