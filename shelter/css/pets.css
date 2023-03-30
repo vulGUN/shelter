@@ -12,7 +12,11 @@
   color: #292929;
 }
 
-.our-friends {
+.burger-item {
+  background-color: #000;
+}
+
+.our-pets-friends {
   padding: 80px 0 100px 0;
   background: #f6f6f6;
 }
@@ -23,7 +27,7 @@
   max-width: 400px;
 }
 
-.our-friends_items {
+.our-friends_pets-items {
   padding: 58px 0;
   display: flex;
   flex-wrap: wrap;
@@ -33,7 +37,7 @@
   row-gap: 30px;
 }
 
-.our-friends_item {
+.our-friends_pets-item {
   display: flex;
   flex-direction: column;
   align-items: center;
