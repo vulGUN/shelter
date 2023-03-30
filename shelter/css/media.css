@@ -19,8 +19,58 @@
     margin-top: 42px;
   }
 
-  img.not-only__dog {
+  .not-only__dog {
     max-width: 569px;
+  }
+
+  .about_wrap {
+    flex-direction: column-reverse;
+    row-gap: 80px;
+  }
+
+  .about_img {
+    max-width: 300px;
+  }
+
+  .our-friends_items {
+    column-gap: 40px;
+  }
+
+  .our-friends_item:nth-child(3) {
+    display: none;
+  }
+
+  .help_items {
+    padding: 57px 39px 0 39px;
+    column-gap: 0;
+    justify-content: space-between;
+  }
+
+  .help_item {
+    width: 170px;
+  }
+
+  .in-addition_wrap {
+    flex-direction: column-reverse;
+    justify-content: center;
+    row-gap: 60px;
+  }
+
+  .footer {
+    padding-top: 30px;
+  }
+
+  .footer_wrap {
+    margin-top: 0;
+  }
+
+  .footer_content {
+    justify-content: space-evenly;
+    row-gap: 65px;
+  }
+
+  .footer_location {
+    margin-right: 0;
   }
 }
 
@@ -60,7 +110,130 @@
     text-align: center;
   }
 
-  img.not-only__dog {
+  .not-only__dog,
+  .about_img,
+  .in-addition_img,
+  .footer_img {
     max-width: 260px;
+  }
+
+  .about {
+    padding: 42px 0;
+  }
+
+  .about_wrap {
+    row-gap: 40px;
+  }
+
+  .about_descr {
+    text-align: justify;
+    padding: 0 15px;
+  }
+
+  .arrow {
+    order: 2;
+  }
+
+  .our-friends_slider {
+    padding: 42px 0;
+    flex-direction: column;
+  }
+
+  .arrow_wrap {
+    margin-top: 20px;
+    column-gap: 20px;
+    position: relative;
+    justify-content: space-evenly;
+  }
+
+  .our-friends_item:nth-child(2) {
+    display: none;
+  }
+
+  .our-friends {
+    padding: 42px 0;
+  }
+
+  .help {
+    padding: 42px 0;
+  }
+
+  .in-addition {
+    padding: 42px 0;
+  }
+
+  .in-addition_wrap {
+    padding: 0 10px;
+    row-gap: 42px;
+  }
+
+  .in-addition_right {
+    align-items: center;
+    row-gap: 20px;
+  }
+
+  .in-addition_descr {
+    letter-spacing: 0;
+  }
+
+  .in-addition_credit-card {
+    padding: 5px 14px;
+    font-size: 15px;
+  }
+
+  .in-addition_donation-descr {
+    text-align: justify;
+  }
+
+  .footer_content {
+    justify-content: center;
+    row-gap: 40px;
+  }
+
+  .footer_wrap {
+    align-items: center;
+  }
+
+  .footer_wrap:nth-child(2) {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 450px) {
+  .help_items {
+    padding: 42px 5px 0 5px;
+    row-gap: 29px;
+  }
+
+  .help_item {
+    width: 130px;
+  }
+
+  .help_item-img {
+    max-width: 50px;
+  }
+
+  .help_item-descr {
+    margin-top: 20px;
+    font-size: 15px;
+  }
+}
+
+@media (hover: hover) {
+  .arrow:hover {
+    background-color: #f1cdb3;
+  }
+
+  .our-friends_item:hover {
+    background: #fff;
+    box-shadow: 0 0 15px #ebebeb;
+  }
+
+  .our-friends_item:hover .pet-info_btn {
+    background: #fddcc4;
+  }
+
+  .in-addition_credit-card:hover {
+    background: #fddcc4;
   }
 }
