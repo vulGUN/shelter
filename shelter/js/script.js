@@ -40,12 +40,13 @@ console.log(`
 // Бургер меню
 
 const burgerBtn = document.querySelector('.burger-menu'),
-  menu = document.querySelector('.navigation');
+  navigation = document.querySelector('.navigation'),
+  menu = document.querySelector('.menu');
 // const body = document.body;
 // const html = document.documentElement;
 
 burgerBtn.addEventListener('click', () => {
-  menu.classList.toggle('menu_open');
+  navigation.classList.toggle('menu_open');
   burgerBtn.classList.toggle('menu_rotate');
   // if (body.style.overflow === 'hidden') {
   //   html.style.overflow = 'visible';
@@ -54,4 +55,8 @@ burgerBtn.addEventListener('click', () => {
   //   html.style.overflow = 'hidden';
   //   body.style.overflow = 'hidden';
   // }
+});
+menu.addEventListener('click', () => {
+  navigation.classList.remove('menu_open');
+  burgerBtn.classList.remove('menu_rotate');
 });
