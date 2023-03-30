@@ -124,10 +124,6 @@
     right: 20px;
   }
 
-  .menu_item {
-    color: #cdcdcd;
-  }
-
   .menu_item:hover,
   .menu_active {
     color: #fafafa;
@@ -156,6 +152,7 @@
   }
 
   .menu_item {
+    color: #cdcdcd;
     font-size: 32px;
   }
 
@@ -166,6 +163,10 @@
   .not-only_left {
     padding: 0;
     margin-bottom: 104px;
+  }
+
+  .not-only_descr {
+    padding: 0 40px;
   }
 
   .title {
@@ -279,6 +280,14 @@
 }
 
 @media (max-width: 600px) {
+  .title {
+    padding: 0 5px;
+  }
+
+  .about_title {
+    padding: 0 15px;
+  }
+
   .our-friends_pets-item:nth-child(4) {
     display: none;
   }
@@ -293,6 +302,10 @@
 }
 
 @media (max-width: 450px) {
+  .not-only_descr {
+    padding: 0;
+  }
+
   .help_items {
     padding: 42px 5px 0 5px;
     row-gap: 29px;
