@@ -7,7 +7,7 @@
 
 .burger-menu {
   display: none;
-  z-index: 9998;
+  z-index: 9999;
   flex-direction: column;
   row-gap: 8px;
   width: 30px;
