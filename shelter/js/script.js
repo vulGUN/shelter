@@ -41,7 +41,7 @@
 
 const burgerBtn = document.querySelector('.burger-menu'),
   navigation = document.querySelector('.navigation'),
-  menuItem = document.querySelector('.menu_item');
+  menuItem = document.querySelectorAll('.menu_item');
 const body = document.body;
 const html = document.documentElement;
 
@@ -49,8 +49,8 @@ document.addEventListener('click', (e) => {
   if (!navigation.contains(e.target) && !burgerBtn.contains(e.target)) {
     navigation.classList.remove('menu_open');
     burgerBtn.classList.remove('menu_rotate');
-    checkMenuOpen();
   }
+  checkMenuOpen();
 });
 
 function checkMenuOpen() {
@@ -68,10 +68,12 @@ burgerBtn.addEventListener('click', () => {
   burgerBtn.classList.toggle('menu_rotate');
   checkMenuOpen();
 });
-menuItem.addEventListener('click', () => {
-  navigation.classList.remove('menu_open');
-  burgerBtn.classList.remove('menu_rotate');
-  checkMenuOpen();
+menuItem.forEach((i) => {
+  i.addEventListener('click', () => {
+    navigation.classList.remove('menu_open');
+    burgerBtn.classList.remove('menu_rotate');
+    checkMenuOpen();
+  });
 });
 
 // удлаить
