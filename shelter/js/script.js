@@ -55,11 +55,11 @@ document.addEventListener('click', (e) => {
 
 function checkMenuOpen() {
   if (navigation.className.includes('menu_open')) {
-    html.style.overflow = 'hidden';
-    body.style.overflow = 'hidden';
+    html.style.overflowY = 'hidden';
+    body.style.overflowY = 'hidden';
   } else {
-    html.style.overflow = 'visible';
-    body.style.overflow = 'visible';
+    html.style.overflowY = 'visible';
+    body.style.overflowY = 'visible';
   }
 }
 
@@ -76,4 +76,15 @@ menuItem.forEach((i) => {
   });
 });
 
-// удлаить
+// слайдер
+
+const sliderItem = document.querySelector('.our-friends_item'),
+  sliderBtnLeft = document.querySelector('.our-friends_left-arrow'),
+  sliderBtnRight = document.querySelector('.our-friends_right-arrow');
+
+function abc() {
+  console.log('ok');
+}
+
+sliderBtnLeft.addEventListener('click', abc);
+sliderBtnRight.addEventListener('click', abc);
