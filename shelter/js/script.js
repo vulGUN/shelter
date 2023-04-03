@@ -76,11 +76,11 @@ document.addEventListener('click', (e) => {
 
 function checkMenuOpen() {
   if (navigation.className.includes('menu_open')) {
-    html.style.overflow = 'hidden';
-    body.style.overflow = 'hidden';
+    html.style.overflowY = 'hidden';
+    body.style.overflowY = 'hidden';
   } else {
-    html.style.overflow = 'visible';
-    body.style.overflow = 'visible';
+    html.style.overflowY = 'visible';
+    body.style.overflowY = 'visible';
   }
 }
 
