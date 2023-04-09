@@ -1,3 +1,5 @@
+import popup from './popup.js';
+import slider from './slider.js';
 // console.log(`
 // верстка страницы валидная +4
 // логотип в хедере состоит из текстовых элементов +1
@@ -76,15 +78,5 @@ menuItem.forEach((i) => {
   });
 });
 
-// слайдер
-
-const sliderItem = document.querySelector('.our-friends_item'),
-  sliderBtnLeft = document.querySelector('.our-friends_left-arrow'),
-  sliderBtnRight = document.querySelector('.our-friends_right-arrow');
-
-function abc() {
-  console.log('ok');
-}
-
-sliderBtnLeft.addEventListener('click', abc);
-sliderBtnRight.addEventListener('click', abc);
+slider();
+popup();
