@@ -71,12 +71,13 @@
 
 .our-friends_slider {
   position: relative;
+  overflow: hidden;
   padding: 60px 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
+/* 
 .arrow_wrap {
   position: absolute;
   width: 100%;
@@ -84,9 +85,12 @@
   align-items: center;
   justify-content: space-between;
   z-index: 0;
-}
+} */
 
 .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   width: 52px;
   height: 52px;
   border: 2px solid #f1cdb3;
@@ -95,6 +99,18 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+}
+
+.arrow:active {
+  transform: translateY(-50%) scale(0.8);
+}
+
+.our-friends_left-arrow {
+  left: 0;
+}
+
+.our-friends_right-arrow {
+  right: 0;
 }
 
 .arrow::before {
@@ -111,7 +127,15 @@
 
 .our-friends_items {
   display: flex;
+  position: relative;
   align-items: center;
+  column-gap: 90px;
+}
+
+.our-friends_itemWrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   column-gap: 90px;
 }
 
@@ -121,7 +145,7 @@
   align-items: center;
   border-radius: 9px;
   background: #fafafa;
-  z-index: 1;
+  /* z-index: 1; */
 }
 
 .pets-card-title {
@@ -243,4 +267,30 @@
   font-size: 12px;
   line-height: 18px;
   color: #b2b2b2;
+}
+
+@keyframes slider-move-right {
+  from {
+    left: 0;
+  }
+  to {
+    left: -1080px;
+  }
+}
+
+@keyframes slider-move-left {
+  from {
+    right: 0;
+  }
+  to {
+    right: -1080px;
+  }
+}
+
+.move_left {
+  animation: slider-move-left 1s forwards;
+}
+
+.move_right {
+  animation: slider-move-right 1s forwards;
 }

@@ -42,18 +42,6 @@
     padding: 28px 0 40px 0;
   }
 
-  .our-friends_item:nth-child(3) {
-    display: none;
-  }
-
-  .our-friends_pets-item:nth-child(7) {
-    display: none;
-  }
-
-  .our-friends_pets-item:nth-child(8) {
-    display: none;
-  }
-
   .help_items {
     padding: 57px 39px 0 39px;
     column-gap: 0;
@@ -216,10 +204,6 @@
     justify-content: space-evenly;
   }
 
-  .our-friends_item:nth-child(2) {
-    display: none;
-  }
-
   .our-friends,
   .our-pets-friends {
     padding: 42px 0;
@@ -286,18 +270,6 @@
 
   .about_title {
     padding: 0 15px;
-  }
-
-  .our-friends_pets-item:nth-child(4) {
-    display: none;
-  }
-
-  .our-friends_pets-item:nth-child(5) {
-    display: none;
-  }
-
-  .our-friends_pets-item:nth-child(6) {
-    display: none;
   }
 }
 
