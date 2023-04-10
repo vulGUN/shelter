@@ -1,5 +1,10 @@
+import burger from './burger.js';
 import popup from './popup.js';
 import slider from './slider.js';
+
+burger();
+slider();
+popup();
 // console.log(`
 // верстка страницы валидная +4
 // логотип в хедере состоит из текстовых элементов +1
@@ -38,45 +43,3 @@ import slider from './slider.js';
 // фоновый цвет тянется на всю ширину страницы +2
 
 // Итого: 100 баллов`);
-
-// Бургер меню
-
-const burgerBtn = document.querySelector('.burger-menu'),
-  navigation = document.querySelector('.navigation'),
-  menuItem = document.querySelectorAll('.menu_item');
-const body = document.body;
-const html = document.documentElement;
-
-document.addEventListener('click', (e) => {
-  if (!navigation.contains(e.target) && !burgerBtn.contains(e.target)) {
-    navigation.classList.remove('menu_open');
-    burgerBtn.classList.remove('menu_rotate');
-  }
-  checkMenuOpen();
-});
-
-function checkMenuOpen() {
-  if (navigation.className.includes('menu_open')) {
-    html.style.overflowY = 'hidden';
-    body.style.overflowY = 'hidden';
-  } else {
-    html.style.overflowY = 'visible';
-    body.style.overflowY = 'visible';
-  }
-}
-
-burgerBtn.addEventListener('click', () => {
-  navigation.classList.toggle('menu_open');
-  burgerBtn.classList.toggle('menu_rotate');
-  checkMenuOpen();
-});
-menuItem.forEach((i) => {
-  i.addEventListener('click', () => {
-    navigation.classList.remove('menu_open');
-    burgerBtn.classList.remove('menu_rotate');
-    checkMenuOpen();
-  });
-});
-
-slider();
-popup();
