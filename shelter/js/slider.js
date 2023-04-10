@@ -37,19 +37,16 @@ const slider = function () {
 
   function init() {
     if (window.innerWidth >= 1200) {
-      console.log('Комп');
       itemCounter = 3;
       setLeftItems(3);
       setCenterItems(3);
       setRightItems(3);
     } else if (window.innerWidth < 1200 && window.innerWidth >= 768) {
-      console.log('Планшет');
       itemCounter = 2;
       setLeftItems(2);
       setCenterItems(2);
       setRightItems(2);
     } else if (window.innerWidth < 768) {
-      console.log('Мобайл');
       itemCounter = 1;
       setLeftItems(1);
       setCenterItems(1);
@@ -59,14 +56,28 @@ const slider = function () {
 
   init();
 
-  // let isInitCalled = false;
+  let desctop = false,
+    tablet = false,
+    mobile = false;
 
-  // window.addEventListener('resize', () => {
-  //   if (!isInitCalled && window.innerWidth >= 1200) {
-  //     // init();
-  //     isInitCalled = true;
-  //   }
-  // });
+  window.addEventListener('resize', () => {
+    if (!desctop && window.innerWidth >= 1200) {
+      desctop = true;
+      tablet = false;
+      mobile = false;
+      // init();
+    } else if (!tablet && window.innerWidth < 1200 && window.innerWidth >= 768) {
+      desctop = false;
+      tablet = true;
+      mobile = false;
+      // init();
+    } else if (!mobile && window.innerWidth < 768) {
+      desctop = false;
+      tablet = false;
+      mobile = true;
+      // init();
+    }
+  });
 
   // Функции, которые непосредственно формируют элементы для каждого массива
 
