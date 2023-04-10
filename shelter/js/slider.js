@@ -59,12 +59,12 @@ const slider = function () {
 
   init();
 
-  // let currentWidth = '';
+  // let isInitCalled = false;
 
   // window.addEventListener('resize', () => {
-  //   console.log(window.innerWidth);
-  //   if (window.innerWidth < 1200 && ) {
-  //     init();
+  //   if (!isInitCalled && window.innerWidth >= 1200) {
+  //     // init();
+  //     isInitCalled = true;
   //   }
   // });
 
@@ -110,8 +110,6 @@ const slider = function () {
     leftArr = [];
     setLeftItems(itemCounter);
   }
-
-  console.log(centerArr);
 
   // Генерируем контент на странице
 

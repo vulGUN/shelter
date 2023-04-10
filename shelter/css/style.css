@@ -80,8 +80,8 @@ a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 900px;
-  height: 500px;
+  min-width: 900px;
+  min-height: 500px;
   background-color: #fafafa;
   border-radius: 9px;
   opacity: 1;
@@ -181,7 +181,7 @@ a {
   color: #000000;
 }
 
-.popup-dog {
+.popup-dog-breed {
   margin-top: 10px;
   font-family: 'Georgia';
   font-size: 20px;
@@ -203,11 +203,25 @@ a {
 .caracter {
   margin-top: 40px;
   font-family: 'Georgia';
-  font-weight: 700;
   font-size: 15px;
   line-height: 110%;
   letter-spacing: 0.06em;
   color: #000000;
+  list-style-type: none;
+}
+
+.caracter > li {
+  line-height: 22px;
+}
+
+.caracter > li::before {
+  content: '';
+  display: inline-block;
+  margin-right: 10px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #f1cdb3;
 }
 
 .popup_open {
@@ -226,4 +240,54 @@ a {
 .popupBg_close {
   animation: popupBg-close 0.3s forwards;
   display: none;
+}
+
+@media (max-width: 1199px) {
+  .popup {
+    min-width: 630px;
+    min-height: 350px;
+  }
+
+  .popup_wrapper {
+    column-gap: 10px;
+  }
+
+  .popup img {
+    width: 350px;
+  }
+
+  .popup-descr {
+    margin-top: 20px;
+    max-width: 260px;
+  }
+
+  .caracter {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .popup {
+    min-width: 240px;
+    min-height: 340px;
+    padding: 10px;
+  }
+
+  .popup_btn {
+    right: -30px;
+  }
+
+  .popup-name,
+  .popup-dog-breed,
+  .popup-descr {
+    text-align: center;
+  }
+
+  .popup-descr {
+    max-width: 100%;
+  }
+
+  .popup img {
+    display: none;
+  }
 }
