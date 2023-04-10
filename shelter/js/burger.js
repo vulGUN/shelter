@@ -18,11 +18,11 @@ const burger = function () {
     if (navigation.className.includes('menu_open')) {
       html.style.overflowY = 'hidden';
       body.style.overflowY = 'hidden';
-      popupBg.style.display = 'block';
+      // popupBg.style.display = 'block';
     } else {
       html.style.overflowY = 'visible';
       body.style.overflowY = 'visible';
-      popupBg.style.display = 'none';
+      // popupBg.style.display = 'none';
     }
   }
 

@@ -1,4 +1,5 @@
 import pets from './pets.js';
+import popup from './popup.js';
 
 // слайдер
 
@@ -110,6 +111,8 @@ const slider = function () {
     setLeftItems(itemCounter);
   }
 
+  console.log(centerArr);
+
   // Генерируем контент на странице
 
   function generateHtmlItems(leftArr, centerArr, rightArr) {
@@ -118,7 +121,7 @@ const slider = function () {
     <div class="our-friends_item">
       <img src="${leftArr[i].img}" alt="pet" class="pet_img">
       <div class="pets-card-title">${leftArr[i].name}</div>
-      <button class="pet-info_btn btns">Learn more</button>
+      <button id="${leftArr[i].btnId}" class="pet-info_btn btns">Learn more</button>
     </div>
     `;
       leftItems.insertAdjacentHTML('afterbegin', html);
@@ -128,7 +131,7 @@ const slider = function () {
      <div class="our-friends_item">
        <img src="${centerArr[i].img}" alt="pet" class="pet_img">
        <div class="pets-card-title">${centerArr[i].name}</div>
-       <button class="pet-info_btn btns">Learn more</button>
+       <button id="${centerArr[i].btnId}" class="pet-info_btn btns">Learn more</button>
      </div>  
     `;
       centerItems.insertAdjacentHTML('afterbegin', html);
@@ -138,11 +141,12 @@ const slider = function () {
       <div class="our-friends_item">
       <img src="${rightArr[i].img}" alt="pet" class="pet_img">
       <div class="pets-card-title">${rightArr[i].name}</div>
-      <button class="pet-info_btn btns">Learn more</button>
+      <button id="${rightArr[i].btnId}" class="pet-info_btn btns">Learn more</button>
     </div>
       `;
       rightItems.insertAdjacentHTML('afterbegin', html);
     }
+    popup();
   }
 
   generateHtmlItems(leftArr, centerArr, rightArr);

@@ -187,8 +187,10 @@
     padding: 0 15px;
   }
 
-  .arrow {
-    order: 2;
+  .arrow_wrap {
+    column-gap: 20px;
+    position: relative;
+    justify-content: space-evenly;
   }
 
   .our-friends_slider {
@@ -196,16 +198,13 @@
     flex-direction: column;
   }
 
-  .arrow_wrap {
-    margin-top: 20px;
-    column-gap: 20px;
-    position: relative;
-    justify-content: space-evenly;
-  }
-
   .our-friends,
   .our-pets-friends {
     padding: 42px 0;
+  }
+
+  .our-friends_slider {
+    max-width: 320px;
   }
 
   .our-friends_pets-items {

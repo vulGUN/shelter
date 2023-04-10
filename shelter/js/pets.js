@@ -10,6 +10,7 @@ const pets = [
     inoculations: ['none'],
     diseases: ['none'],
     parasites: ['none'],
+    btnId: 'jennifer1',
   },
   {
     name: 'Sophia',
@@ -22,6 +23,7 @@ const pets = [
     inoculations: ['parvovirus'],
     diseases: ['none'],
     parasites: ['none'],
+    btnId: 'sophia1',
   },
   {
     name: 'Woody',
@@ -34,6 +36,7 @@ const pets = [
     inoculations: ['adenovirus', 'distemper'],
     diseases: ['right back leg mobility reduced'],
     parasites: ['none'],
+    btnId: 'woody1',
   },
   {
     name: 'Scarlett',
@@ -46,6 +49,7 @@ const pets = [
     inoculations: ['parainfluenza'],
     diseases: ['none'],
     parasites: ['none'],
+    btnId: 'scarlett1',
   },
   {
     name: 'Katrine',
@@ -58,6 +62,7 @@ const pets = [
     inoculations: ['panleukopenia'],
     diseases: ['none'],
     parasites: ['none'],
+    btnId: 'katrine1',
   },
   {
     name: 'Timmy',
@@ -70,6 +75,7 @@ const pets = [
     inoculations: ['calicivirus', 'viral rhinotracheitis'],
     diseases: ['kidney stones'],
     parasites: ['none'],
+    btnId: 'timmy1',
   },
   {
     name: 'Freddie',
@@ -82,6 +88,7 @@ const pets = [
     inoculations: ['rabies'],
     diseases: ['none'],
     parasites: ['none'],
+    btnId: 'freddie1',
   },
   {
     name: 'Charly',
@@ -94,6 +101,7 @@ const pets = [
     inoculations: ['bordetella bronchiseptica', 'leptospirosis'],
     diseases: ['deafness', 'blindness'],
     parasites: ['lice', 'fleas'],
+    btnId: 'charly1',
   },
 ];
 
