@@ -70,6 +70,7 @@
 }
 
 .our-friends_slider {
+  margin: 0 auto;
   position: relative;
   overflow: hidden;
   padding: 60px 0;
@@ -77,15 +78,16 @@
   align-items: center;
   justify-content: center;
 }
-/* 
+
 .arrow_wrap {
-  position: absolute;
+  position: relative;
   width: 100%;
+  height: 52px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   z-index: 0;
-} */
+}
 
 .arrow {
   position: absolute;

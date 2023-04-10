@@ -76,7 +76,6 @@ a {
 .popup {
   position: fixed;
   display: none;
-  align-items: center;
   margin: 0 auto;
   top: 50%;
   left: 50%;
@@ -85,18 +84,23 @@ a {
   height: 500px;
   background-color: #fafafa;
   border-radius: 9px;
-  column-gap: 30px;
   opacity: 1;
   z-index: 999;
   /* transition: all 0.3s; */
 }
 
+.popup_wrapper {
+  display: flex;
+  align-items: center;
+  column-gap: 30px;
+}
+
 .popup_btn {
   display: block;
-  position: absolute;
+  position: fixed;
   background: url(../assets/ico/Vector.svg) center no-repeat;
   top: -54px;
-  right: -42px;
+  right: -40px;
   width: 52px;
   height: 52px;
   border: 2px solid #f1cdb3;
@@ -107,13 +111,6 @@ a {
 
 .popup_btn:active {
   transform: scale(0.9);
-}
-
-.popup_close {
-  animation: popup-close 0.3s forwards;
-}
-.popupBg_close {
-  animation: popupBg-close 0.3s forwards;
 }
 
 @keyframes popup-close {
@@ -135,6 +132,26 @@ a {
   }
 }
 
+@keyframes popup-open {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes popupBg-open {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .popup-bg {
   display: none;
   position: fixed;
@@ -144,6 +161,7 @@ a {
   top: 0;
   background: rgba(41, 41, 41, 0.6);
   backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 
 .popup img {
@@ -190,4 +208,22 @@ a {
   line-height: 110%;
   letter-spacing: 0.06em;
   color: #000000;
+}
+
+.popup_open {
+  animation: popup-open 0.3s forwards;
+  display: flex;
+}
+.popupBg_open {
+  animation: popupBg-open 0.3s forwards;
+  display: block;
+}
+
+.popup_close {
+  animation: popup-close 0.3s forwards;
+  display: none;
+}
+.popupBg_close {
+  animation: popupBg-close 0.3s forwards;
+  display: none;
 }
