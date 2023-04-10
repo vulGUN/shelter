@@ -242,6 +242,13 @@ a {
   display: none;
 }
 
+.show {
+  display: block;
+}
+.hide {
+  display: none;
+}
+
 @media (max-width: 1199px) {
   .popup {
     min-width: 630px;

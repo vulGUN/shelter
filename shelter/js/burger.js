@@ -10,6 +10,7 @@ const burger = function () {
     if (!navigation.contains(e.target) && !burgerBtn.contains(e.target)) {
       navigation.classList.remove('menu_open');
       burgerBtn.classList.remove('menu_rotate');
+      popupBg.classList.remove('show');
     }
     checkMenuOpen();
   });
@@ -18,23 +19,24 @@ const burger = function () {
     if (navigation.className.includes('menu_open')) {
       html.style.overflowY = 'hidden';
       body.style.overflowY = 'hidden';
-      // popupBg.style.display = 'block';
     } else {
       html.style.overflowY = 'visible';
       body.style.overflowY = 'visible';
-      // popupBg.style.display = 'none';
     }
   }
 
   burgerBtn.addEventListener('click', () => {
     navigation.classList.toggle('menu_open');
     burgerBtn.classList.toggle('menu_rotate');
+    popupBg.classList.toggle('show');
+
     checkMenuOpen();
   });
   menuItem.forEach((i) => {
     i.addEventListener('click', () => {
       navigation.classList.remove('menu_open');
       burgerBtn.classList.remove('menu_rotate');
+      popupBg.classList.remove('show');
       checkMenuOpen();
     });
   });
