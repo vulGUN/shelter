@@ -21,10 +21,10 @@ const popup = () => {
           <div class="popup-dog-breed">${pets[i].breed}</div>
           <div class="popup-descr">${pets[i].description}</div>
           <ul class="caracter">
-            <li class="age">Age: ${pets[i].age}</li>
-            <li class="inoculation">Inoculations: ${pets[i].inoculations}</li>
-            <li class="diseases">Diseases: ${pets[i].diseases}</li>
-            <li class="parasites">Parasites: ${pets[i].parasites}</li>
+            <li class="age"><b>Age:</b> ${pets[i].age}</li>
+            <li class="inoculation"><b>Inoculations:</b> ${pets[i].inoculations}</li>
+            <li class="diseases"><b>Diseases:</b> ${pets[i].diseases}</li>
+            <li class="parasites"><b>Parasites:</b> ${pets[i].parasites}</li>
           </ul>
         </div>
         `;
@@ -43,8 +43,6 @@ const popup = () => {
       //   popup.classList.remove('popup_close');
       //   // popupBg.classList.remove('popupBg_open');
       // });
-
-      console.log('ok');
     });
   });
 
