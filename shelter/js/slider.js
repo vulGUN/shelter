@@ -3,8 +3,7 @@ import pets from './pets.js';
 // слайдер
 
 const slider = function () {
-  const sliderItem = document.querySelectorAll('.our-friends_item'),
-    sliderItems = document.querySelector('.our-friends_items'),
+  const sliderItems = document.querySelector('.our-friends_items'),
     leftItems = document.querySelector('#left-items'),
     centerItems = document.querySelector('#center-items'),
     rightItems = document.querySelector('#right-items'),
@@ -15,10 +14,6 @@ const slider = function () {
   //   .then((response) => response.json())
   //   .then((data) => console.log(data));
 
-  function getRandom() {
-    return Math.floor(Math.random() * (9 - 1));
-  }
-
   // async function getPetsInfo() {
   //   const res = await fetch('./js/pets.json');
   //   const data = await res.json();
@@ -27,6 +22,12 @@ const slider = function () {
 
   // getPetsInfo().then((data) => {
   // });
+
+  function getRandom() {
+    return Math.floor(Math.random() * (9 - 1));
+  }
+
+  // Создание общей функции Init, которая формирует изначальный контент карточек слайдера на странице
 
   let leftArr = [],
     centerArr = [],
@@ -57,18 +58,23 @@ const slider = function () {
 
   init();
 
-  // window.addEventListener('resize', () => {
+  // let currentWidth = '';
 
+  // window.addEventListener('resize', () => {
+  //   console.log(window.innerWidth);
+  //   if (window.innerWidth < 1200 && ) {
+  //     init();
+  //   }
   // });
+
+  // Функции, которые непосредственно формируют элементы для каждого массива
 
   function setLeftItems(x) {
     for (let i = 0; i < x; i++) {
       const randomNum = getRandom();
       if (!leftArr.includes(pets[randomNum]) && !centerArr.includes(pets[randomNum])) {
         leftArr.push(pets[randomNum]);
-      } else {
-        --i;
-      }
+      } else --i;
     }
   }
   function setCenterItems(x) {
@@ -76,9 +82,7 @@ const slider = function () {
       const randomNum = getRandom();
       if (!centerArr.includes(pets[randomNum]) && !leftArr.includes(pets[randomNum])) {
         centerArr.push(pets[randomNum]);
-      } else {
-        --i;
-      }
+      } else --i;
     }
   }
   function setRightItems(x) {
@@ -86,11 +90,11 @@ const slider = function () {
       const randomNum = getRandom();
       if (!rightArr.includes(pets[randomNum]) && !centerArr.includes(pets[randomNum])) {
         rightArr.push(pets[randomNum]);
-      } else {
-        --i;
-      }
+      } else --i;
     }
   }
+
+  // Функции переформирования массивов при нажатии кнопки влево и вправо
 
   function forward() {
     leftArr = centerArr;
@@ -99,13 +103,6 @@ const slider = function () {
     setRightItems(itemCounter);
   }
 
-  // function changeToBackward() {
-  //   rightArr = centerArr;
-  //   centerArr = leftArr;
-  //   leftArr = [];
-  //   setLeftItems(itemCounter);
-  // }
-
   function backward() {
     rightArr = centerArr;
     centerArr = leftArr;
@@ -113,70 +110,49 @@ const slider = function () {
     setLeftItems(itemCounter);
   }
 
-  // function changeToForward() {
-  //   leftArr = centerArr;
-  //   centerArr = rightArr;
-  //   rightArr = [];
-  //   setRightItems(itemCounter);
-  // }
+  // Генерируем контент на странице
 
   function generateHtmlItems(leftArr, centerArr, rightArr) {
     for (let i = 0; i < itemCounter; i++) {
-      leftItems.innerHTML += `
+      const html = `
     <div class="our-friends_item">
       <img src="${leftArr[i].img}" alt="pet" class="pet_img">
       <div class="pets-card-title">${leftArr[i].name}</div>
       <button class="pet-info_btn btns">Learn more</button>
     </div>
     `;
+      leftItems.insertAdjacentHTML('afterbegin', html);
     }
     for (let i = 0; i < itemCounter; i++) {
-      centerItems.innerHTML += `
-    <div class="our-friends_item">
-      <img src="${centerArr[i].img}" alt="pet" class="pet_img">
-      <div class="pets-card-title">${centerArr[i].name}</div>
-      <button class="pet-info_btn btns">Learn more</button>
-    </div>  
+      const html = `
+     <div class="our-friends_item">
+       <img src="${centerArr[i].img}" alt="pet" class="pet_img">
+       <div class="pets-card-title">${centerArr[i].name}</div>
+       <button class="pet-info_btn btns">Learn more</button>
+     </div>  
     `;
+      centerItems.insertAdjacentHTML('afterbegin', html);
     }
     for (let i = 0; i < itemCounter; i++) {
-      rightItems.innerHTML += `
-    <div class="our-friends_item">
+      const html = `
+      <div class="our-friends_item">
       <img src="${rightArr[i].img}" alt="pet" class="pet_img">
       <div class="pets-card-title">${rightArr[i].name}</div>
       <button class="pet-info_btn btns">Learn more</button>
     </div>
-    `;
+      `;
+      rightItems.insertAdjacentHTML('afterbegin', html);
     }
   }
 
-  console.log(leftArr);
-  console.log(centerArr);
-  console.log(rightArr);
-
   generateHtmlItems(leftArr, centerArr, rightArr);
 
-  sliderBtnLeft.addEventListener('click', () => {
-    moveLeft();
-    backward();
-    sliderItems.addEventListener('animationend', (e) => {
-      leftItems.innerHTML = '';
-      centerItems.innerHTML = '';
-      rightItems.innerHTML = '';
-      generateHtmlItems(leftArr, centerArr, rightArr);
-    });
-  });
+  // Вешаем слушатели на кнопки влево и вправо
 
-  sliderBtnRight.addEventListener('click', () => {
-    moveRight();
-    forward();
-    sliderItems.addEventListener('animationend', (e) => {
-      leftItems.innerHTML = '';
-      centerItems.innerHTML = '';
-      rightItems.innerHTML = '';
-      generateHtmlItems(leftArr, centerArr, rightArr);
-    });
-  });
+  sliderBtnLeft.addEventListener('click', moveLeft);
+  sliderBtnRight.addEventListener('click', moveRight);
+
+  // удаление класса, чтобы слайдер крутился бесконечно
 
   sliderItems.addEventListener('animationend', (e) => {
     if (e.animationName === 'slider-move-right') {
@@ -186,12 +162,32 @@ const slider = function () {
     }
   });
 
+  // функционал для кнопок влево и вправо
+
   function moveLeft() {
+    backward();
     sliderItems.classList.add('move_left');
+    sliderBtnLeft.removeEventListener('click', moveLeft);
+    sliderItems.addEventListener('animationend', (e) => {
+      leftItems.innerHTML = '';
+      centerItems.innerHTML = '';
+      rightItems.innerHTML = '';
+      generateHtmlItems(leftArr, centerArr, rightArr);
+      sliderBtnLeft.addEventListener('click', moveLeft);
+    });
   }
 
   function moveRight() {
+    forward();
     sliderItems.classList.add('move_right');
+    sliderBtnRight.removeEventListener('click', moveRight);
+    sliderItems.addEventListener('animationend', (e) => {
+      leftItems.innerHTML = '';
+      centerItems.innerHTML = '';
+      rightItems.innerHTML = '';
+      generateHtmlItems(leftArr, centerArr, rightArr);
+      sliderBtnRight.addEventListener('click', moveRight);
+    });
   }
 };
 

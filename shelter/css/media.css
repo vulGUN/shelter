@@ -99,7 +99,6 @@
 
   .start-screen {
     position: relative;
-    overflow-x: hidden;
   }
 
   .header {
@@ -136,12 +135,12 @@
 
   .menu {
     flex-direction: column;
-    row-gap: 40px;
+    row-gap: 50px;
   }
 
   .menu_item {
     color: #cdcdcd;
-    font-size: 32px;
+    font-size: 28px;
   }
 
   .menu_active::after {
