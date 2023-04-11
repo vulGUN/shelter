@@ -6,13 +6,11 @@ const popup = () => {
     popupOpen = document.querySelectorAll('.pet-info_btn'),
     itemCard = document.querySelectorAll('.our-friends_item'),
     popupBg = document.querySelector('.popup-bg'),
-    popupClose = document.querySelector('.popup_btn'),
-    body = document.body,
-    html = document.documentElement;
+    popupClose = document.querySelector('.popup_btn');
 
-  function setPopup(event) {
+  function setPopup(id) {
     for (let i = 0; i < pets.length; i++) {
-      if (event.target.id === pets[i].btnId) {
+      if (id === pets[i].btnId) {
         popupWrapper.innerHTML = '';
         const html = `
         <img class="popup-img" src="${pets[i].img}" alt="pet">
@@ -34,9 +32,9 @@ const popup = () => {
     }
   }
 
-  popupOpen.forEach((i) => {
-    i.addEventListener('click', (event) => {
-      setPopup(event);
+  itemCard.forEach((i) => {
+    i.addEventListener('click', () => {
+      setPopup(i.id);
       popup.classList.add('popup_open');
       popupBg.classList.add('popupBg_open');
     });

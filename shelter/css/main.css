@@ -1,6 +1,7 @@
 @import url(style.css);
 @import url(header.css);
 @import url(footer.css);
+@import url(popup.css);
 
 .not-only {
   padding-top: 60px;
@@ -60,7 +61,7 @@
 
 .our-friends {
   padding: 80px 0 100px 0;
-  background: #f6f6f6;
+  background: #f4f4f4;
 }
 
 .our-friends_title {
@@ -149,7 +150,7 @@
   border-radius: 9px;
   background: #fafafa;
   width: 270px;
-  /* z-index: 1; */
+  cursor: pointer;
 }
 
 .pets-card-title {
