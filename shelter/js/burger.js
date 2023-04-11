@@ -13,6 +13,10 @@ const burger = function () {
       burgerBtn.classList.remove('menu_rotate');
       popupBg.classList.remove('show');
     }
+    if (e.target === popupBg) {
+      popup.classList.remove('popup_open');
+      popupBg.classList.remove('popupBg_open');
+    }
     checkMenuOpen();
   });
 
