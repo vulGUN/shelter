@@ -11,6 +11,10 @@ body {
   overflow-x: hidden;
 }
 
+.scroll_block {
+  overflow: hidden;
+}
+
 html {
   scroll-behavior: smooth;
 }

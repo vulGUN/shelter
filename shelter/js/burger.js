@@ -1,10 +1,11 @@
 const burger = function () {
   const burgerBtn = document.querySelector('.burger-menu'),
+    popup = document.querySelector('.popup'),
     navigation = document.querySelector('.navigation'),
     menuItem = document.querySelectorAll('.menu_item'),
-    popupBg = document.querySelector('.popup-bg');
-  const body = document.body;
-  const html = document.documentElement;
+    popupBg = document.querySelector('.popup-bg'),
+    body = document.body,
+    html = document.documentElement;
 
   document.addEventListener('click', (e) => {
     if (!navigation.contains(e.target) && !burgerBtn.contains(e.target)) {
@@ -16,12 +17,12 @@ const burger = function () {
   });
 
   function checkMenuOpen() {
-    if (navigation.className.includes('menu_open')) {
-      html.style.overflowY = 'hidden';
-      body.style.overflowY = 'hidden';
+    if (navigation.className.includes('menu_open') || popup.className.includes('popup_open')) {
+      body.classList.add('scroll_block');
+      html.classList.add('scroll_block');
     } else {
-      html.style.overflowY = 'visible';
-      body.style.overflowY = 'visible';
+      body.classList.remove('scroll_block');
+      html.classList.remove('scroll_block');
     }
   }
 
