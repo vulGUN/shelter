@@ -6,10 +6,9 @@ const popup = () => {
     popupOpen = document.querySelectorAll('.pet-info_btn'),
     itemCard = document.querySelectorAll('.our-friends_item'),
     popupBg = document.querySelector('.popup-bg'),
-    popupClose = document.querySelector('.popup_btn');
-
-  const body = document.body;
-  const html = document.documentElement;
+    popupClose = document.querySelector('.popup_btn'),
+    body = document.body,
+    html = document.documentElement;
 
   function setPopup(event) {
     for (let i = 0; i < pets.length; i++) {
@@ -40,31 +39,13 @@ const popup = () => {
       setPopup(event);
       popup.classList.add('popup_open');
       popupBg.classList.add('popupBg_open');
-      // popup.addEventListener('animationend', () => {
-      //   popup.classList.remove('popup_close');
-      //   // popupBg.classList.remove('popupBg_open');
-      // });
     });
-    // checkPopupOpen();
   });
 
   popupClose.addEventListener('click', () => {
     popup.classList.remove('popup_open');
     popupBg.classList.remove('popupBg_open');
-    // checkPopupOpen();
   });
-
-  // function checkPopupOpen() {
-  //   if (popup.className.includes('popup_open')) {
-  //     html.style.overflowY = 'hidden';
-  //     body.style.overflowY = 'hidden';
-  //   } else {
-  //     html.style.overflowY = 'visible';
-  //     body.style.overflowY = 'visible';
-  //   }
-  // }
-
-  // checkPopupOpen();
 };
 
 export default popup;

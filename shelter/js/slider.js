@@ -63,40 +63,32 @@ const slider = function () {
 
   init();
 
+  function initResize() {
+    leftArr = [];
+    centerArr = [];
+    rightArr = [];
+    init();
+    leftItems.innerHTML = '';
+    centerItems.innerHTML = '';
+    rightItems.innerHTML = '';
+    generateHtmlItems(leftArr, centerArr, rightArr);
+  }
+
+  // отслеживаем разрешения экрана для подстройки слайдера
+
   window.addEventListener('resize', () => {
     if (!desctop && window.innerWidth >= 1200) {
       tablet = false;
       mobile = false;
-      leftArr = [];
-      centerArr = [];
-      rightArr = [];
-      init();
-      leftItems.innerHTML = '';
-      centerItems.innerHTML = '';
-      rightItems.innerHTML = '';
-      generateHtmlItems(leftArr, centerArr, rightArr);
+      initResize();
     } else if (!tablet && window.innerWidth < 1200 && window.innerWidth >= 768) {
       desctop = false;
       mobile = false;
-      leftArr = [];
-      centerArr = [];
-      rightArr = [];
-      init();
-      leftItems.innerHTML = '';
-      centerItems.innerHTML = '';
-      rightItems.innerHTML = '';
-      generateHtmlItems(leftArr, centerArr, rightArr);
+      initResize();
     } else if (!mobile && window.innerWidth < 768) {
       desctop = false;
       tablet = false;
-      leftArr = [];
-      centerArr = [];
-      rightArr = [];
-      init();
-      leftItems.innerHTML = '';
-      centerItems.innerHTML = '';
-      rightItems.innerHTML = '';
-      generateHtmlItems(leftArr, centerArr, rightArr);
+      initResize();
     }
   });
 
@@ -127,25 +119,13 @@ const slider = function () {
     }
   }
 
-  // Функции переформирования массивов при нажатии кнопки влево и вправо
-
-  function forward() {
-    leftArr = centerArr;
-    centerArr = rightArr;
-    rightArr = [];
-    setRightItems(itemCounter);
-  }
-
-  function backward() {
-    rightArr = centerArr;
-    centerArr = leftArr;
-    leftArr = [];
-    setLeftItems(itemCounter);
-  }
-
   // Генерируем контент на странице
 
   function generateHtmlItems(leftArr, centerArr, rightArr) {
+    leftItems.innerHTML = '';
+    centerItems.innerHTML = '';
+    rightItems.innerHTML = '';
+
     for (let i = 0; i < itemCounter; i++) {
       const html = `
     <div class="our-friends_item">
@@ -196,16 +176,29 @@ const slider = function () {
     }
   });
 
+  // Функции переформирования массивов при нажатии кнопки влево и вправо
+
+  function forward() {
+    leftArr = centerArr;
+    centerArr = rightArr;
+    rightArr = [];
+    setRightItems(itemCounter);
+  }
+
+  function backward() {
+    rightArr = centerArr;
+    centerArr = leftArr;
+    leftArr = [];
+    setLeftItems(itemCounter);
+  }
+
   // функционал для кнопок влево и вправо
 
   function moveLeft() {
     backward();
     sliderItems.classList.add('move_left');
     sliderBtnLeft.removeEventListener('click', moveLeft);
-    sliderItems.addEventListener('animationend', (e) => {
-      leftItems.innerHTML = '';
-      centerItems.innerHTML = '';
-      rightItems.innerHTML = '';
+    sliderItems.addEventListener('animationend', () => {
       generateHtmlItems(leftArr, centerArr, rightArr);
       sliderBtnLeft.addEventListener('click', moveLeft);
     });
@@ -215,10 +208,7 @@ const slider = function () {
     forward();
     sliderItems.classList.add('move_right');
     sliderBtnRight.removeEventListener('click', moveRight);
-    sliderItems.addEventListener('animationend', (e) => {
-      leftItems.innerHTML = '';
-      centerItems.innerHTML = '';
-      rightItems.innerHTML = '';
+    sliderItems.addEventListener('animationend', () => {
       generateHtmlItems(leftArr, centerArr, rightArr);
       sliderBtnRight.addEventListener('click', moveRight);
     });
