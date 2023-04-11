@@ -128,30 +128,30 @@ const slider = function () {
 
     for (let i = 0; i < itemCounter; i++) {
       const html = `
-    <div class="our-friends_item">
+    <div id="${leftArr[i].btnId}" class="our-friends_item">
       <img src="${leftArr[i].img}" alt="pet" class="pet_img">
       <div class="pets-card-title">${leftArr[i].name}</div>
-      <button id="${leftArr[i].btnId}" class="pet-info_btn btns">Learn more</button>
+      <button class="pet-info_btn btns">Learn more</button>
     </div>
     `;
       leftItems.insertAdjacentHTML('afterbegin', html);
     }
     for (let i = 0; i < itemCounter; i++) {
       const html = `
-     <div class="our-friends_item">
+     <div id="${centerArr[i].btnId}" class="our-friends_item">
        <img src="${centerArr[i].img}" alt="pet" class="pet_img">
        <div class="pets-card-title">${centerArr[i].name}</div>
-       <button id="${centerArr[i].btnId}" class="pet-info_btn btns">Learn more</button>
+       <button class="pet-info_btn btns">Learn more</button>
      </div>  
     `;
       centerItems.insertAdjacentHTML('afterbegin', html);
     }
     for (let i = 0; i < itemCounter; i++) {
       const html = `
-      <div class="our-friends_item">
+      <div id="${rightArr[i].btnId}" class="our-friends_item">
       <img src="${rightArr[i].img}" alt="pet" class="pet_img">
       <div class="pets-card-title">${rightArr[i].name}</div>
-      <button id="${rightArr[i].btnId}" class="pet-info_btn btns">Learn more</button>
+      <button class="pet-info_btn btns">Learn more</button>
     </div>
       `;
       rightItems.insertAdjacentHTML('afterbegin', html);
