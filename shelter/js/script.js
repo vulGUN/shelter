@@ -1,9 +1,7 @@
 import burger from './burger.js';
 import popup from './popup.js';
-import slider from './slider.js';
 
 burger();
-slider();
 popup();
 // console.log(`
 // верстка страницы валидная +4

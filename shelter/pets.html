@@ -38,54 +38,15 @@
       <div class="container">
         <h1 class="our-friends_title title">Our friends who
           are&nbsp;looking for a house</h1>
-        <div class="our-friends_pets-items">
-          <div class="our-friends_pets-item">
-            <img src="assets/img/pets/pets-katrine.png" alt="pet-katrine" class="pet_img">
-            <div class="pets-card-title">Katrine</div>
-            <button class="pet-info_btn btns">Learn more</button>
-          </div>
-          <div class="our-friends_pets-item">
-            <img src="assets/img/pets/pets-jennifer.png" alt="pet-jennifer" class="pet_img">
-            <div class="pets-card-title">Jennifer</div>
-            <button class="pet-info_btn btns">Learn more</button>
-          </div>
-          <div class="our-friends_pets-item">
-            <img src="assets/img/pets/pets-woody.png" alt="pet-woody" class="pet_img">
-            <div class="pets-card-title">Woody</div>
-            <button class="pet-info_btn btns">Learn more</button>
-          </div>
-          <div class="our-friends_pets-item">
-            <img src="assets/img/pets/pets-sophia.png" alt="pet-sophia" class="pet_img">
-            <div class="pets-card-title">Sophia</div>
-            <button class="pet-info_btn btns">Learn more</button>
-          </div>
-          <div class="our-friends_pets-item">
-            <img src="assets/img/pets/pets-timmy.png" alt="timmy-sophia" class="pet_img">
-            <div class="pets-card-title">Timmy</div>
-            <button class="pet-info_btn btns">Learn more</button>
-          </div>
-          <div class="our-friends_pets-item">
-            <img src="assets/img/pets/pets-charly.png" alt="charly-sophia" class="pet_img">
-            <div class="pets-card-title">Charly</div>
-            <button class="pet-info_btn btns">Learn more</button>
-          </div>
-          <div class="our-friends_pets-item">
-            <img src="assets/img/pets/pets-scarlet.png" alt="scarlet-sophia" class="pet_img">
-            <div class="pets-card-title">Scarlet</div>
-            <button class="pet-info_btn btns">Learn more</button>
-          </div>
-          <div class="our-friends_pets-item">
-            <img src="assets/img/pets/pets-freddie.png" alt="freddie-sophia" class="pet_img">
-            <div class="pets-card-title">Freddie</div>
-            <button class="pet-info_btn btns">Learn more</button>
-          </div>
-        </div>
         <div class="pagination">
-          <button class="pagination_first pag_btn inactive">&lt;&lt;</button>
-          <button class="pagination_prev pag_btn inactive">&lt;</button>
-          <button class="pagination_now pag_btn active">1</button>
-          <button class="pagination_next pag_btn active">&gt;</button>
-          <button class="pagination_last pag_btn active">&gt;&gt;</button>
+          <div class="our-friends_items"></div>
+        </div>
+        <div class="btn_wrap">
+          <button class="pagination_first pag_btn">&lt;&lt;</button>
+          <button class="pagination_prev pag_btn">&lt;</button>
+          <div class="pagination_now pag_btn">1</div>
+          <button class="pagination_next pag_btn">&gt;</button>
+          <button class="pagination_last pag_btn">&gt;&gt;</button>
         </div>
       </div>
     </section>
@@ -113,8 +74,13 @@
       </div>
     </div>
   </footer>
+  <div class="popup" id="pop">
+    <div class="popup_wrapper"></div>
+    <div class="popup_btn"></div>
+  </div>
   <div class="popup-bg"></div>
   <script src="js/script.js" type="module"></script>
+  <script src="js/pagination.js" type="module"></script>
 </body>
 
 </html>

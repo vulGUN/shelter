@@ -215,4 +215,6 @@ const slider = function () {
   }
 };
 
+slider();
+
 export default slider;
