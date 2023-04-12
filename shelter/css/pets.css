@@ -1,6 +1,7 @@
 @import url(style.css);
 @import url(header.css);
 @import url(footer.css);
+@import url(popup.css);
 
 .menu_item,
 .logo-title {
@@ -16,6 +17,13 @@
   background-color: #000;
 }
 
+.pagination {
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  padding: 60px 0;
+}
+
 .our-pets-friends {
   padding: 80px 0 100px 0;
   background: #f6f6f6;
@@ -27,22 +35,32 @@
   max-width: 400px;
 }
 
-.our-friends_pets-items {
-  padding: 58px 0;
+.our-friends_items {
   display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: center;
-  column-gap: 40px;
-  row-gap: 30px;
+  position: relative;
+  align-items: center;
+  column-gap: 90px;
+  right: 0;
 }
 
-.our-friends_pets-item {
+.our-friends_itemWrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  row-gap: 40px;
+  column-gap: 40px;
+  min-width: 100%;
+}
+
+.our-friends_item {
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 9px;
   background: #fafafa;
+  width: 270px;
+  cursor: pointer;
 }
 
 .our-friends_item:hover {
@@ -68,11 +86,11 @@
   width: 187px;
 }
 
-.pagination {
+.btn_wrap {
   display: flex;
   align-items: center;
+  column-gap: 10px;
   justify-content: center;
-  column-gap: 20px;
 }
 
 .pag_btn {
@@ -86,20 +104,34 @@
   font-size: 20px;
   line-height: 115%;
   letter-spacing: 0.06em;
-}
-
-.pagination_now {
-  background-color: #f1cdb3;
-}
-
-.active {
   border-color: #f1cdb3;
   color: #292929;
 }
 
-.active:hover {
+.pag_btn:active {
+  transform: scale(0.85);
+}
+
+.inactive:active {
+  transform: scale(1);
+}
+
+.pagination_now {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f1cdb3;
+  border-color: #f1cdb3;
+}
+
+.pag_btn:hover {
   border-color: #fddcc4;
   background-color: #fddcc4;
+}
+
+.inactive:hover {
+  border-color: #cdcdcd;
+  background-color: transparent;
 }
 
 .inactive {
@@ -120,4 +152,30 @@
   overflow-x: hidden;
   height: 0;
   width: 0;
+}
+
+.move_left {
+  animation: pag-move-left 0.8s forwards;
+}
+
+.move_right {
+  animation: pag-move-right 0.8s forwards;
+}
+
+@keyframes pag-move-left {
+  from {
+    right: 0;
+  }
+  to {
+    right: -1290px;
+  }
+}
+
+@keyframes pag-move-right {
+  from {
+    left: 0;
+  }
+  to {
+    left: -1290px;
+  }
 }
